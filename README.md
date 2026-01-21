@@ -162,61 +162,158 @@
 # 🎨 style.css
 
 ```css
-<div className="app">
-  <h1 className="title">Todo App</h1>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <form className="todo-form">
-    <input
-      className="todo-input"
-      placeholder="What needs to be done?"
-    />
-  </form>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-  <ul className="todo-list">
-    <li className="todo-item">
-      <label>
-        <input type="checkbox" />
-        <span className="todo-text">Learn TypeScript basics</span>
-      </label>
-      <button className="delete-btn">✕</button>
-    </li>
+#root {
+  width: 100%;
+  max-width: 600px;
+}
 
-    <li className="todo-item">
-      <label>
-        <input type="checkbox" checked />
-        <span className="todo-text">Understand React props</span>
-      </label>
-      <button className="delete-btn">✕</button>
-    </li>
+.app-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
 
-    <li className="todo-item">
-      <label>
-        <input type="checkbox" />
-        <span className="todo-text">Build first Todo app</span>
-      </label>
-      <button className="delete-btn">✕</button>
-    </li>
+.app-title {
+  text-align: center;
+  color: #667eea;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
 
-    <li className="todo-item">
-      <label>
-        <input type="checkbox" checked />
-        <span className="todo-text">Read about union types</span>
-      </label>
-      <button className="delete-btn">✕</button>
-    </li>
-  </ul>
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
 
-  <div className="footer">
-    <span className="counter">2 items left</span>
+.todo-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
 
-    <div className="filters">
-      <button className="filter active">All</button>
-      <button className="filter">Active</button>
-      <button className="filter">Completed</button>
-    </div>
-  </div>
-</div>
+.todo-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
 
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-add {
+  background: #667eea;
+  color: white;
+}
+
+.btn-add:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.btn-filter {
+  background: #f5f5f5;
+  color: #333;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.btn-filter:hover {
+  background: #e0e0e0;
+}
+
+.btn-filter.active {
+  background: #667eea;
+  color: white;
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+
+.todo-item:hover {
+  background: #f0f0f0;
+  transform: translateX(5px);
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.btn-delete {
+  background: #ff6b6b;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.btn-delete:hover {
+  background: #ee5a52;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: 18px;
+}
 ```
 
 # Ресурсы
