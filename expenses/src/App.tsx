@@ -1,25 +1,34 @@
 import { useState } from 'react'
 
 import './App.css'
+import TodoForm from './components/TodoForm';
 
-function App() {
-  const [] = useState(0)
+export interface IExpense {
+id: number,
+completed: boolean,
+text: string
+}
+
+export function App() {
+  const [todos, setTodos ] = useState<IExpense[]>([])
+
+  const addTodo = (text: string) => {
+    const newTodo = {
+      id : Date.now(),
+      completed : false,
+      text: text
+    };
+
+    setTodos([...todos, newTodo])
+  };
 
   return (
    <div className="app-container">
       <h1 className="app-title">📝 Мои задачи</h1>
+      <TodoForm onAdd={addTodo}/>
       
       {/* Форма добавления задачи */}
-      <div className="todo-form">
-        <input
-          type="text"
-          className="todo-input"
-          placeholder="Введите новую задачу..."
-        />
-        <button type="button" className="btn btn-add">
-          Добавить
-        </button>
-      </div>
+      
       
       {/* Кнопки фильтрации */}
       <div className="filter-buttons">
